@@ -22,9 +22,10 @@ char segment::get_color(){
 }
 
 void segment::add_segment(){
-    segment s;
+    segment * s = new segment;
 
-    s.next=next;
-    next = &s;
+    s->next=next;
+    next = s;
+    //cout <<"\nadres " << s << " next adres " << s->next;
 }
 
