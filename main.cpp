@@ -18,7 +18,6 @@ using namespace std;
 
 int main(){
 
-
 mapa skarbow;
 
 int x,y;
@@ -31,8 +30,11 @@ skarbow.y=y;
 //t[x][y];
 
 skarbow.create_map();
-cout<<skarbow.tab;
-
-skarbow.draw();
-
+//cout<<skarbow.tab;
+while(1){
+    char cc;
+    cin>>cc;
+    skarbow.load_one_char(cc);
+    skarbow.draw();
+}
 }

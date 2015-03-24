@@ -3,20 +3,19 @@
 using namespace std;
 
 mapa::mapa(){
-
+    actualX=0;
+    actualY=0;
 }
-
 //char draw_point(int pointX,int pointY){
 //    return tab[pointX][pointY];
 //}
-
 void mapa::draw(){
 
-    for(int i=0;i<x;i++){
+    for(int i=0;i<y;i++){
         cout<<"\n";
-        for(int j=0;j<y;j++){
-            tab[i][j]='d';
-            cout<<tab[i][j];
+        for(int j=0;j<x;j++){
+            //tab[i][j]='d';
+            cout<<tab[j][i];
         }
     }
 }
@@ -26,9 +25,23 @@ void mapa::create_map(){
 
         for (int i = 0; i < x; i++){
             tab[i] = new char [y];
-            cout<<tab<<"\n";
+            //cout<<tab<<"\n";
         }
-
 }
+
+void mapa::load_one_char(char c){
+    tab[actualX][actualY]=c;
+    actualX++;
+    if(actualX==x){
+        actualX=0;
+        actualY++;
+    }
+}
+
+//void mapa::load()
+//{
+//    for(int i=0;i<)
+//
+//}
 
 

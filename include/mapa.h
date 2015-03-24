@@ -11,9 +11,13 @@ class mapa
         void create_map();
         void draw();
         void draw_point();
+        void load();
+        void load_one_char(char);
         mapa();
     protected:
     private:
+        int actualX;
+        int actualY;
 };
 
 #endif // MAPA_H
