@@ -34,18 +34,4 @@ skarbow.create_map();
 
 skarbow.draw();
 
-
-//t[5][5]='X';
-
-//rysuj_mape(t,10,10);
-//cout<<t[5][5];
-
-
-
-    for(int i=0;i<20;i++){
-        edek.go();
-        cout<<edek.get_color();
-        //cout<<i;
-    }
-	return 0;
 }
