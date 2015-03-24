@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1427035035 source:d:\users\rychu\documents\rych2\worm\main.cpp
+1427192711 source:d:\users\rychu\documents\rych2\worm\main.cpp
 	"worm.h"
 	"segment.h"
+	"mapa.h"
 	<iostream>
 
 1427034028 d:\users\rychu\documents\rych2\worm\include\worm.h
@@ -11,9 +12,14 @@
 	"worm.h"
 	"segment.h"
 
-1427035079 source:d:\users\rychu\documents\rych2\worm\src\segment.cpp
+1427191494 source:d:\users\rychu\documents\rych2\worm\src\segment.cpp
 	"segment.h"
 	<iostream>
 
 1426854635 d:\users\rychu\documents\rych2\worm\include\segment.h
+
+1427137778 source:d:\users\rychu\documents\rych2\worm\src\mapa.cpp
+	"mapa.h"
+
+1427192639 d:\users\rychu\documents\rych2\worm\include\mapa.h
 
