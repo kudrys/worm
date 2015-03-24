@@ -31,10 +31,7 @@ skarbow.y=y;
 
 skarbow.create_map();
 //cout<<skarbow.tab;
-while(1){
-    char cc;
-    cin>>cc;
-    skarbow.load_one_char(cc);
-    skarbow.draw();
-}
+skarbow.load();
+
+
 }

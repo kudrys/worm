@@ -38,10 +38,12 @@ void mapa::load_one_char(char c){
     }
 }
 
-//void mapa::load()
-//{
-//    for(int i=0;i<)
-//
-//}
+void mapa::load(){
+    char c;
+    for(int i=0;i<x*y;i++){
+        cin>>c;
+        load_one_char(c);
+    }
+}
 
 
