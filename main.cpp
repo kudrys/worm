@@ -31,6 +31,7 @@ skarbow.y=y;
 //t[x][y];
 
 skarbow.create_map();
+cout<<skarbow.tab;
 
 skarbow.draw();
 
