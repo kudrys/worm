@@ -6,9 +6,11 @@ mapa::mapa(){
     actualX=0;
     actualY=0;
 }
-//char draw_point(int pointX,int pointY){
-//    return tab[pointX][pointY];
-//}
+
+char mapa::draw_point(int pointX,int pointY){
+    return tab[pointX][pointY];
+}
+
 void mapa::draw(){
 
     for(int i=0;i<y;i++){

@@ -32,6 +32,7 @@ skarbow.y=y;
 skarbow.create_map();
 //cout<<skarbow.tab;
 skarbow.load();
-
+skarbow.draw();
+cout<<skarbow.draw_point(1,2);
 
 }

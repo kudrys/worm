@@ -10,7 +10,7 @@ class mapa
         char **tab;
         void create_map();
         void draw();
-        void draw_point();
+        char draw_point(int,int);
         void load();
         void load_one_char(char);
         mapa();
