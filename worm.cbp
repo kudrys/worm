@@ -33,9 +33,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/mapa.h" />
 		<Unit filename="include/segment.h" />
 		<Unit filename="include/worm.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/mapa.cpp" />
 		<Unit filename="src/segment.cpp" />
 		<Unit filename="src/worm.cpp" />
 		<Extensions>
