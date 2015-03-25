@@ -13,6 +13,7 @@ class mapa
         char draw_point(int,int);
         void load();
         void load_one_char(char);
+        void trees_everywhere();
         mapa();
     protected:
     private:

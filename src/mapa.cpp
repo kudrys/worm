@@ -3,39 +3,52 @@
 using namespace std;
 
 mapa::mapa(){
-    actualX=0;
-    actualY=0;
+    actualX=1;
+    actualY=1;
 }
 
 char mapa::draw_point(int pointX,int pointY){
     return tab[pointX][pointY];
 }
 
+void mapa::trees_everywhere()
+{
+    for(int i=0;i<y+2;i++){
+        for(int j=0;j<x+2;j++){
+            tab[0][j] = 'T';
+            tab[i][0] = 'T';
+            tab[i][x+1] = 'T';
+            tab[y+1][j] = 'T';
+        }
+    }
+}
+
+
+void mapa::create_map(){
+        tab = new char* [x+2];
+
+        for (int i = 0; i < x+2; i++){
+            tab[i] = new char [y+2];
+            //cout<<tab<<"\n";
+        }
+}
+
 void mapa::draw(){
 
-    for(int i=0;i<y;i++){
+    for(int i=0;i<y+2;i++){
         cout<<"\n";
-        for(int j=0;j<x;j++){
+        for(int j=0;j<x+2;j++){
             //tab[i][j]='d';
             cout<<tab[j][i];
         }
     }
 }
 
-void mapa::create_map(){
-        tab = new char* [x];
-
-        for (int i = 0; i < x; i++){
-            tab[i] = new char [y];
-            //cout<<tab<<"\n";
-        }
-}
-
 void mapa::load_one_char(char c){
     tab[actualX][actualY]=c;
     actualX++;
-    if(actualX==x){
-        actualX=0;
+    if(actualX==x+1){
+        actualX=1;
         actualY++;
     }
 }

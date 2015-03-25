@@ -15,7 +15,6 @@ using namespace std;
 //    }
 //}
 
-
 int main(){
 
 mapa skarbow;
@@ -30,9 +29,10 @@ skarbow.y=y;
 //t[x][y];
 
 skarbow.create_map();
+skarbow.trees_everywhere();
 //cout<<skarbow.tab;
 skarbow.load();
 skarbow.draw();
-cout<<skarbow.draw_point(1,2);
+//cout<<skarbow.draw_point(1,2);
 
 }
