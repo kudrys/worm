@@ -5,6 +5,8 @@ using namespace std;
 mapa::mapa(){
     actualX=1;
     actualY=1;
+    edzioX=1;
+    edzioY=1;
 }
 
 char mapa::draw_point(int pointX,int pointY){
@@ -23,7 +25,6 @@ void mapa::trees_everywhere()
     }
 }
 
-
 void mapa::create_map(){
         tab = new char* [x+2];
 
@@ -31,6 +32,7 @@ void mapa::create_map(){
             tab[i] = new char [y+2];
             //cout<<tab<<"\n";
         }
+        trees_everywhere();
 }
 
 void mapa::draw(){
@@ -60,5 +62,28 @@ void mapa::load(){
         load_one_char(c);
     }
 }
+
+void mapa::set_edzio_size(int c){
+    if(edzio.segment_count==1){
+        edzio.add_segments(c-1);
+    }
+}
+
+void mapa::go(int x, int y){
+    char action;
+    action=tab[x][y];
+
+    switch(action){
+    case '.':
+        edzio.go();
+        edzioX=x;
+        edzioY=y;
+        if(edzio.get_active().is_painted){
+            tab[x][y]=edzio.get_color();
+        }
+    }
+}
+
+
 
 

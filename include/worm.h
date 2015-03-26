@@ -13,9 +13,9 @@ class worm{
         void funkk();
         void paint_active(char);
         void go();
+        int segment_count;
     protected:
     private:
-        int segment_count;
         segment * active_segment;  //TODO uwaga na wszkaznik
 };
 

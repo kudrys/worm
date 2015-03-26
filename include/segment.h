@@ -10,7 +10,9 @@ class segment
         void paint(char);
         char get_color();
         void add_segment();
+        void delete_segment();
         segment();
+        ~segment();
     protected:
     private:
         char color;
