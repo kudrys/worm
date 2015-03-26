@@ -35,9 +35,9 @@ void mapa::create_map(){
 
 void mapa::draw(){
 
-    for(int i=0;i<y+2;i++){
+    for(int i=1;i<y+1;i++){
         cout<<"\n";
-        for(int j=0;j<x+2;j++){
+        for(int j=1;j<x+1;j++){
             //tab[i][j]='d';
             cout<<tab[j][i];
         }
