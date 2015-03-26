@@ -38,9 +38,24 @@ skarbow.edzio.paint_active('K');
 cout<<skarbow.edzio.get_color();
 
 skarbow.load();
-skarbow.draw();
-skarbow.go(1,2);
-skarbow.draw();
-
+skarbow.draw2();
+while(1){
+    int m,n;
+    cin>>m;
+    cin>>n;
+    skarbow.go(m,n);
+skarbow.draw2();
+}
 //cout<<skarbow.draw_point(1,2);
 }
+//. . T . . . . . . .
+//. . . . . . . . . .
+//. c . . . . . . a b
+//. . . . . . . . . .
+//. . . . . . . . . .
+//. . . . . . . . . .
+//. G G . . . . . . .
+//. . . . . . . . . .
+//. . . K K K K K K .
+//. . . . . . . . . .
+//

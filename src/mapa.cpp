@@ -48,7 +48,7 @@ void mapa::draw(){
 
 void mapa::draw2(){
     draw();
-    cout<<edzioX<<" "<<edzioY<<" ";
+    cout<<"["<<edzioX<<"] ["<<edzioY<<"] ";
 }
 
 void mapa::load_one_char(char c){
