@@ -30,13 +30,17 @@ cin>>edzio_size;
 skarbow.x=x;
 skarbow.y=y;
 
-//char t[10][10];
-//t[x][y];
+
 skarbow.set_edzio_size(edzio_size);
 skarbow.create_map();
-//skarbow.trees_everywhere();
-//cout<<skarbow.tab;
+cout<<skarbow.edzio.get_color();
+skarbow.edzio.paint_active('K');
+cout<<skarbow.edzio.get_color();
+
 skarbow.load();
 skarbow.draw();
+skarbow.go(1,2);
+skarbow.draw();
+
 //cout<<skarbow.draw_point(1,2);
 }

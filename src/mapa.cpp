@@ -46,6 +46,11 @@ void mapa::draw(){
     }
 }
 
+void mapa::draw2(){
+    draw();
+    cout<<edzioX<<" "<<edzioY<<" ";
+}
+
 void mapa::load_one_char(char c){
     tab[actualX][actualY]=c;
     actualX++;
@@ -80,7 +85,27 @@ void mapa::go(int x, int y){
         edzioY=y;
         if(edzio.get_active().is_painted){
             tab[x][y]=edzio.get_color();
-        }
+        }break;
+    case 'G':
+        edzio.go();
+        edzioX=x;
+        edzioY=y;
+        edzio.add_segments(1);
+        tab[x][y]=edzio.get_color();
+        break;
+    case 'K':
+        edzio.get_active().delete_segment();
+        edzio.go();
+        edzioX=x;
+        edzioY=y;
+        break;
+    case 'T':
+        break;
+    default:
+        edzio.go();
+        edzioX=x;
+        edzioY=y;
+        edzio.paint_active(action);
     }
 }
 

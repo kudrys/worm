@@ -8,7 +8,7 @@ segment::segment(){
 }
 
 segment::~segment(){
-    cout<<"deleted"<<"\n"<<this;
+    //cout<<"deleted"<<"\n"<<this;
 }
 
 void segment::paint(char paintcolor){
