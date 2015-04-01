@@ -108,6 +108,26 @@ void mapa::go(int x, int y){
         edzio.paint_active(action);
     }
 }
+void mapa::moves(char c){
+
+    switch(c){
+    case 'l':
+        go(edzioX-1,edzioY);
+        break;
+    case 'p':
+        go(edzioX+1,edzioY);
+        break;
+    case 'g':
+        go(edzioX,edzioY+1);
+        break;
+    case 'd':
+        go(edzioX,edzioY-1);
+        break;
+    default:
+        break;
+    }
+}
+
 
 
 

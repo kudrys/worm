@@ -29,6 +29,7 @@ void worm::add_segments(int c){
     for(int i=0; i<c; i++){
         active_segment->add_segment();
     }
+    segment_count+=c;
 }
 
 void worm::go()

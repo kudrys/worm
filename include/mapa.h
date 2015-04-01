@@ -19,8 +19,9 @@ class mapa
         mapa();
         worm edzio;
         void set_edzio_size(int);
-        void funkk();
         void go(int,int);
+        void moves(char);
+        void funkk();
     protected:
     private:
         void trees_everywhere();

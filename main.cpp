@@ -39,12 +39,11 @@ cout<<skarbow.edzio.get_color();
 
 skarbow.load();
 skarbow.draw2();
-while(1){
-    int m,n;
-    cin>>m;
-    cin>>n;
-    skarbow.go(m,n);
-skarbow.draw2();
+while('x'){
+    int c;
+    cin>>c;
+    skarbow.moves(c);
+    skarbow.draw2();
 }
 //cout<<skarbow.draw_point(1,2);
 }
