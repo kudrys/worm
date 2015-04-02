@@ -39,8 +39,8 @@ cout<<skarbow.edzio.get_color();
 
 skarbow.load();
 skarbow.draw2();
-while('x'){
-    int c;
+while(1){
+    char c;
     cin>>c;
     skarbow.moves(c);
     skarbow.draw2();
@@ -57,4 +57,4 @@ while('x'){
 //. . . . . . . . . .
 //. . . K K K K K K .
 //. . . . . . . . . .
-//
+

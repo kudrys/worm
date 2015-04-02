@@ -1,5 +1,7 @@
 #include "mapa.h"
 #include <iostream>
+#include <locale>
+
 using namespace std;
 
 mapa::mapa(){
@@ -62,9 +64,19 @@ void mapa::load_one_char(char c){
 
 void mapa::load(){
     char c;
+    char z;
     for(int i=0;i<x*y;i++){
         cin>>c;
-        load_one_char(c);
+        if(isalpha(c)){
+            load_one_char(c);
+        }else{
+            cin>>z;
+            for(int j=0;j<c;j++){
+                tab[actualX+j][actualY]=z;
+            }
+          i=i+c;
+          actualX=actualX+c;
+        }
     }
 }
 
@@ -126,6 +138,9 @@ void mapa::moves(char c){
     default:
         break;
     }
+}
+void mapa::translate(char c){
+
 }
 
 
