@@ -21,7 +21,6 @@ class mapa
         void set_edzio_size(int);
         void go(int,int);
         void moves(char);
-        void translate(char);
         void funkk();
     protected:
     private:

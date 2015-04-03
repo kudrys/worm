@@ -70,12 +70,13 @@ void mapa::load(){
         if(isalpha(c)){
             load_one_char(c);
         }else{
+            c-='0';
             cin>>z;
             for(int j=0;j<c;j++){
-                tab[actualX+j][actualY]=z;
+                load_one_char(z);
             }
           i=i+c;
-          actualX=actualX+c;
+          //actualX=actualX+c;
         }
     }
 }
@@ -138,9 +139,6 @@ void mapa::moves(char c){
     default:
         break;
     }
-}
-void mapa::translate(char c){
-
 }
 
 
