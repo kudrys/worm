@@ -91,7 +91,7 @@ void mapa::set_edzio_size(int c){
     }
 }
 
-void mapa::go(int x, int y){
+bool mapa::go(int x, int y){
     char action;
     action=tab[x][y];
 
@@ -117,13 +117,14 @@ void mapa::go(int x, int y){
         edzioY=y;
         break;
     case 'T':
-        break;
+        return 1;
     default:
         edzio.go();
         edzioX=x;
         edzioY=y;
         edzio.paint_active(action);
     }
+    return 0;
 }
 
 bool mapa::moves(char c){
