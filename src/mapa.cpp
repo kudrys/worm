@@ -125,23 +125,19 @@ void mapa::go(int x, int y){
         edzio.paint_active(action);
     }
 }
-void mapa::moves(char c){
 
+bool mapa::moves(char c){
     switch(c){
     case 'l':
-        go(edzioX-1,edzioY);
-        break;
+        return go(edzioX-1,edzioY);
     case 'p':
-        go(edzioX+1,edzioY);
-        break;
+        return go(edzioX+1,edzioY);
     case 'g':
-        go(edzioX,edzioY-1);
-        break;
+        return go(edzioX,edzioY-1);
     case 'd':
-        go(edzioX,edzioY+1);
-        break;
+        return go(edzioX,edzioY+1);
     default:
-        break;
+        return 1;
     }
 }
 

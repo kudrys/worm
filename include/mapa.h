@@ -19,7 +19,7 @@ class mapa
         mapa();
         worm edzio;
         void set_edzio_size(int);
-        void go(int,int);
+        bool go(int,int);
         void moves(char); void funkk();
         void load_moves();
 
