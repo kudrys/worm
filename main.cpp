@@ -38,13 +38,11 @@ skarbow.edzio.paint_active('K');
 //cout<<skarbow.edzio.get_color();
 
 skarbow.load();
+cout<<"gg";
 skarbow.draw2();
-while(1){
-    char c;
-    cin>>c;
-    skarbow.moves(c);
-    skarbow.draw2();
-}
+skarbow.load_moves();
+skarbow.draw2();
+
 //cout<<skarbow.draw_point(1,2);
 }
 //. . T . . . . . . .

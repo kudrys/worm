@@ -70,16 +70,18 @@ void mapa::load(){
     for(int i=0;i<x*y;i++){
         cin>>c; //wczytujemy liczbe albo char
         //a jak wczytamy 5000 to to bedzie w c[0]? 5 w c[1] =0
-        if(isalpha(c[0])){
+        if(isalpha(c[0])||c[0]=='.'){
             load_one_char(c[0]);
+            cout<<"i="<<i<<"\n";
         }else{
             //c-='0';
             cin>>z;
             temp=atoi(c);
             for(int j=0;j<temp;j++){
                 load_one_char(z);
+                cout<<i;
             }
-          i=i+temp;
+            i=i+temp;
           //actualX=actualX+c;
         }
     }
@@ -144,12 +146,12 @@ bool mapa::moves(char c){
 
 void mapa::load_moves()
 {
+
     char c[5];
     char k;
     int temp; //ilosc krokow, przet³umaczone c na int
     while(cin>>c){
-        //wczytujemy liczbe albo char
-        //a jak wczytamy 5000 to to bedzie w c[0]? 5 w c[1] =0
+        draw2();
         if(isalpha(c[0])){
             moves(c[0]);
         }else{
@@ -157,9 +159,11 @@ void mapa::load_moves()
             cin>>k;
             temp=atoi(c);
             for(int j=0;j<temp;j++){
-                moves(k);
+                if(moves(k)){
+                    cout<<temp;
+                    break;
+                }
             }
-          //actualX=actualX+c;
         }
     }
 }
