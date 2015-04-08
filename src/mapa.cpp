@@ -1,6 +1,7 @@
 #include "mapa.h"
 #include <iostream>
 #include <locale>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -63,19 +64,22 @@ void mapa::load_one_char(char c){
 }
 
 void mapa::load(){
-    char c;
+    char c[5];
     char z;
+    int temp; //ilosc krokow, przet³umaczone c na int
     for(int i=0;i<x*y;i++){
-        cin>>c;
-        if(isalpha(c)){
-            load_one_char(c);
+        cin>>c; //wczytujemy liczbe albo char
+        //a jak wczytamy 5000 to to bedzie w c[0]? 5 w c[1] =0
+        if(isalpha(c[0])){
+            load_one_char(c[0]);
         }else{
-            c-='0';
+            //c-='0';
             cin>>z;
-            for(int j=0;j<c;j++){
+            temp=atoi(c);
+            for(int j=0;j<temp;j++){
                 load_one_char(z);
             }
-          i=i+c;
+          i=i+temp;
           //actualX=actualX+c;
         }
     }
@@ -131,13 +135,35 @@ void mapa::moves(char c){
         go(edzioX+1,edzioY);
         break;
     case 'g':
-        go(edzioX,edzioY+1);
+        go(edzioX,edzioY-1);
         break;
     case 'd':
-        go(edzioX,edzioY-1);
+        go(edzioX,edzioY+1);
         break;
     default:
         break;
+    }
+}
+
+void mapa::load_moves()
+{
+    char c[5];
+    char k;
+    int temp; //ilosc krokow, przet³umaczone c na int
+    while(cin>>c){
+        //wczytujemy liczbe albo char
+        //a jak wczytamy 5000 to to bedzie w c[0]? 5 w c[1] =0
+        if(isalpha(c[0])){
+            moves(c[0]);
+        }else{
+            //c-='0';
+            cin>>k;
+            temp=atoi(c);
+            for(int j=0;j<temp;j++){
+                moves(k);
+            }
+          //actualX=actualX+c;
+        }
     }
 }
 

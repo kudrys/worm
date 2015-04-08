@@ -33,9 +33,9 @@ skarbow.y=y;
 
 skarbow.set_edzio_size(edzio_size);
 skarbow.create_map();
-cout<<skarbow.edzio.get_color();
+//cout<<skarbow.edzio.get_color();
 skarbow.edzio.paint_active('K');
-cout<<skarbow.edzio.get_color();
+//cout<<skarbow.edzio.get_color();
 
 skarbow.load();
 skarbow.draw2();
