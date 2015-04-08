@@ -140,7 +140,7 @@ bool mapa::moves(char c){
     case 'd':
         return go(edzioX,edzioY+1);
     default:
-        return 1;
+        return 0;
     }
 }
 
@@ -151,7 +151,7 @@ void mapa::load_moves()
     char k;
     int temp; //ilosc krokow, przet³umaczone c na int
     while(cin>>c){
-        draw2();
+        //draw2();
         if(isalpha(c[0])){
             moves(c[0]);
         }else{
@@ -160,11 +160,12 @@ void mapa::load_moves()
             temp=atoi(c);
             for(int j=0;j<temp;j++){
                 if(moves(k)){
-                    cout<<temp;
-                    break;
+                    //cout<<"temp="<<temp;
+                    //break;
                 }
             }
         }
+        draw2();
     }
 }
 
