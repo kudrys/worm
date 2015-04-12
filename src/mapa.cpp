@@ -114,12 +114,12 @@ bool mapa::go(int x, int y) {
         break;
     case 'K':
         edzio.get_active().delete_segment();
-        cout << edzio.segment_count << "lala\n";
+        //cout << edzio.segment_count << "lala\n";
         edzio.segment_count-=1;
-        cout << edzio.segment_count << "lala\n";
+        //cout << edzio.segment_count << "lala\n";
         if(!edzio.is_alive()) {
-            cout<<"Zegnaj, okrutny swiecie!\n" <<"mam " << edzio.segment_count << "segmencikow\n";;
-            return 0;
+            //cout<<"Zegnaj, okrutny swiecie!\n" ;//<<"mam " << edzio.segment_count << "segmencikow\n";;
+            //return 0;
             break;
         } else {
             edzio.go();
@@ -156,21 +156,22 @@ bool mapa::moves(char c) {
 void mapa::load_moves() {
 
     char c[5];
-    char k;
+    char krok;
     int temp; //ilosc krokow, przet³umaczone c na int
     while(cin>>c) {
         cout << edzio.segment_count;
         if(!edzio.is_alive()) {
             cout<<"Zegnaj, okrutny swiecie!";
+            break;
         } else {
             if(isalpha(c[0])) {
                 moves(c[0]);
             } else {
                 //c-='0';
-                cin>>k;
+                cin>>krok;
                 temp=atoi(c);
                 for(int j=0; j<temp; j++) {
-                    if(moves(k)) {
+                    if(moves(krok)) {
                         //cout<<"temp="<<temp;
                         //break;
                     }
