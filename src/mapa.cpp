@@ -71,14 +71,14 @@ void mapa::load() {
         //a jak wczytamy 5000 to to bedzie w c[0]? 5 w c[1] =0
         if(isalpha(c[0])||c[0]=='.') {
             load_one_char(c[0]);
-            cout<<"i="<<i<<"\n";
+            //cout<<"i="<<i<<"\n";
         } else {
             //c-='0';
             cin>>z;
             temp=atoi(c);
             for(int j=0; j<temp; j++) {
                 load_one_char(z);
-                cout<<i;
+                //cout<<i;
             }
             i=i+temp;
             //actualX=actualX+c;
@@ -118,7 +118,7 @@ bool mapa::go(int x, int y) {
         edzio.segment_count-=1;
         //cout << edzio.segment_count << "lala\n";
         if(!edzio.is_alive()) {
-            //cout<<"Zegnaj, okrutny swiecie!\n" ;//<<"mam " << edzio.segment_count << "segmencikow\n";;
+            cout<<"\nZegnaj, okrutny swiecie!\n" ;//<<"mam " << edzio.segment_count << "segmencikow\n";;
             //return 0;
             break;
         } else {
@@ -159,9 +159,9 @@ void mapa::load_moves() {
     char krok;
     int temp; //ilosc krokow, przet³umaczone c na int
     while(cin>>c) {
-        cout << edzio.segment_count;
+        //cout << edzio.segment_count;
         if(!edzio.is_alive()) {
-            cout<<"Zegnaj, okrutny swiecie!";
+           cout<"kupa";
             break;
         } else {
             if(isalpha(c[0])) {
@@ -171,15 +171,15 @@ void mapa::load_moves() {
                 cin>>krok;
                 temp=atoi(c);
                 for(int j=0; j<temp; j++) {
-                    if(moves(krok)) {
-                        //cout<<"temp="<<temp;
-                        //break;
-                    }
+                    if(edzio.is_alive())
+                    moves(krok);
                 }
             }
-            draw2();
         }
+        if(!edzio.is_alive())
+            break;
     }
+    draw2();
 }
 
 

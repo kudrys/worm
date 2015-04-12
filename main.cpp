@@ -33,15 +33,10 @@ skarbow.y=y;
 
 skarbow.set_edzio_size(edzio_size);
 skarbow.create_map();
-//cout<<skarbow.edzio.get_color();
-skarbow.edzio.paint_active('K');
-//cout<<skarbow.edzio.get_color();
 
 skarbow.load();
-cout<<"gg";
-skarbow.draw2();
 skarbow.load_moves();
-skarbow.draw2();
+
 
 //10 10 3
 //2 . T 18 . c 6 . a b 31 . 2 G 20 . 6 K 11 .
