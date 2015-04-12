@@ -50,7 +50,7 @@ void mapa::draw() {
 
 void mapa::draw2() {
     draw();
-    cout<<"["<<edzioX<<"] ["<<edzioY<<"] ";
+    cout<<"["<<edzioX-1<<"] ["<<edzioY-1<<"] ";
 }
 
 void mapa::load_one_char(char c) {
