@@ -5,21 +5,20 @@
 
 using namespace std;
 
-mapa::mapa(){
+mapa::mapa() {
     actualX=1;
     actualY=1;
     edzioX=1;
     edzioY=1;
 }
 
-char mapa::draw_point(int pointX,int pointY){
+char mapa::draw_point(int pointX,int pointY) {
     return tab[pointX][pointY];
 }
 
-void mapa::trees_everywhere()
-{
-    for(int i=0;i<y+2;i++){
-        for(int j=0;j<x+2;j++){
+void mapa::trees_everywhere() {
+    for(int i=0; i<y+2; i++) {
+        for(int j=0; j<x+2; j++) {
             tab[0][j] = 'T';
             tab[i][0] = 'T';
             tab[i][x+1] = 'T';
@@ -28,83 +27,84 @@ void mapa::trees_everywhere()
     }
 }
 
-void mapa::create_map(){
-        tab = new char* [x+2];
+void mapa::create_map() {
+    tab = new char* [x+2];
 
-        for (int i = 0; i < x+2; i++){
-            tab[i] = new char [y+2];
-            //cout<<tab<<"\n";
-        }
-        trees_everywhere();
+    for (int i = 0; i < x+2; i++) {
+        tab[i] = new char [y+2];
+        //cout<<tab<<"\n";
+    }
+    trees_everywhere();
 }
 
-void mapa::draw(){
+void mapa::draw() {
 
-    for(int i=1;i<y+1;i++){
+    for(int i=1; i<y+1; i++) {
         cout<<"\n";
-        for(int j=1;j<x+1;j++){
+        for(int j=1; j<x+1; j++) {
             //tab[i][j]='d';
             cout<<tab[j][i];
         }
     }
 }
 
-void mapa::draw2(){
+void mapa::draw2() {
     draw();
     cout<<"["<<edzioX<<"] ["<<edzioY<<"] ";
 }
 
-void mapa::load_one_char(char c){
+void mapa::load_one_char(char c) {
     tab[actualX][actualY]=c;
     actualX++;
-    if(actualX==x+1){
+    if(actualX==x+1) {
         actualX=1;
         actualY++;
     }
 }
 
-void mapa::load(){
+void mapa::load() {
     char c[5];
     char z;
-    int temp; //ilosc krokow, przet³umaczone c na int
-    for(int i=0;i<x*y;i++){
+    int temp; //ilosc krokow, przetÂ³umaczone c na int
+    for(int i=0; i<x*y; i++) {
         cin>>c; //wczytujemy liczbe albo char
         //a jak wczytamy 5000 to to bedzie w c[0]? 5 w c[1] =0
-        if(isalpha(c[0])||c[0]=='.'){
+        if(isalpha(c[0])||c[0]=='.') {
             load_one_char(c[0]);
             cout<<"i="<<i<<"\n";
-        }else{
+        } else {
             //c-='0';
             cin>>z;
             temp=atoi(c);
-            for(int j=0;j<temp;j++){
+            for(int j=0; j<temp; j++) {
                 load_one_char(z);
                 cout<<i;
             }
             i=i+temp;
-          //actualX=actualX+c;
+            //actualX=actualX+c;
         }
     }
 }
 
-void mapa::set_edzio_size(int c){
-    if(edzio.segment_count==1){
+void mapa::set_edzio_size(int c) {
+    if(edzio.segment_count==1) {
         edzio.add_segments(c-1);
     }
 }
 
-bool mapa::go(int x, int y){
+bool mapa::go(int x, int y) {
     char action;
     action=tab[x][y];
 
-    switch(action){
+    switch(action) {
     case '.':
         edzio.go();
         edzioX=x;
         edzioY=y;
-        if(edzio.get_active().is_painted){
+        if(edzio.get_active().is_painted) {
             tab[x][y]=edzio.get_color();
-        }break;
+        }
+        break;
     case 'G':
         edzio.go();
         edzioX=x;
@@ -118,10 +118,10 @@ bool mapa::go(int x, int y){
         edzio.go();
         edzioX=x;
         edzioY=y;
-        if(edzio.segment_count==0){
+        if(edzio.is_alive()) {
             cout<<"Zegnaj, okrutny swiecie!";
             return 0;
-            }else{
+        } else {
             break;
         }
     case 'T':
@@ -135,8 +135,8 @@ bool mapa::go(int x, int y){
     return 0;
 }
 
-bool mapa::moves(char c){
-    switch(c){
+bool mapa::moves(char c) {
+    switch(c) {
     case 'l':
         return go(edzioX-1,edzioY);
     case 'p':
@@ -150,32 +150,32 @@ bool mapa::moves(char c){
     }
 }
 
-void mapa::load_moves()
-{
+void mapa::load_moves() {
 
     char c[5];
     char k;
-    int temp; //ilosc krokow, przet³umaczone c na int
-    while(cin>>c){
-        //draw2();
-        if(isalpha(c[0])){
-            moves(c[0]);
-        }else{
-            //c-='0';
-            cin>>k;
-            temp=atoi(c);
-            for(int j=0;j<temp;j++){
-                if(moves(k)){
-                    //cout<<"temp="<<temp;
-                    //break;
+    int temp; //ilosc krokow, przetÂ³umaczone c na int
+    while(cin>>c) {
+        if(!edzio.is_alive()) {
+            cout<<"Zegnaj, okrutny swiecie!";
+        } else {
+            if(isalpha(c[0])) {
+                moves(c[0]);
+            } else {
+                //c-='0';
+                cin>>k;
+                temp=atoi(c);
+                for(int j=0; j<temp; j++) {
+                    if(moves(k)) {
+                        //cout<<"temp="<<temp;
+                        //break;
+                    }
                 }
             }
+            draw2();
         }
-        draw2();
     }
 }
-
-
 
 
 
