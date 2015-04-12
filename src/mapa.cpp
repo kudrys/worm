@@ -168,13 +168,13 @@ void mapa::load_moves() {
                 moves(c[0]);
             } else {
                 if (c[0]=='!')draw2();//delete it when everything works
-                //c-='0';
+                else{
                 cin>>krok;
                 temp=atoi(c);
                 for(int j=0; j<temp; j++) {
                     if(edzio.is_alive())
                     moves(krok);
-                }
+                }}
             }
         }
         if(!edzio.is_alive())
