@@ -118,8 +118,9 @@ bool mapa::go(int x, int y) {
         edzio.segment_count-=1;
         cout << edzio.segment_count << "lala\n";
         if(!edzio.is_alive()) {
-            cout<<"Zegnaj, okrutny swiecie!\n";
+            cout<<"Zegnaj, okrutny swiecie!\n" <<"mam " << edzio.segment_count << "segmencikow\n";;
             return 0;
+            break;
         } else {
             edzio.go();
             edzioX=x;
