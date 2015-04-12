@@ -22,6 +22,7 @@ class mapa
         bool go(int,int);
         bool moves(char); void funkk();
         void load_moves();
+        void draw_trees();
 
     protected:
     private:

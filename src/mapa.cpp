@@ -17,12 +17,12 @@ char mapa::draw_point(int pointX,int pointY) {
 }
 
 void mapa::trees_everywhere() {
-    for(int i=0; i<y+2; i++) {
-        for(int j=0; j<x+2; j++) {
+    for(int i=0; i<x+2; i++) {
+        for(int j=0; j<y+2; j++) {
             tab[0][j] = 'T';
             tab[i][0] = 'T';
-            tab[i][x+1] = 'T';
-            tab[y+1][j] = 'T';
+            tab[i][y+1] = 'T';
+            tab[x+1][j] = 'T';
         }
     }
 }
@@ -35,6 +35,17 @@ void mapa::create_map() {
         //cout<<tab<<"\n";
     }
     trees_everywhere();
+}
+
+void mapa::draw_trees() {
+
+    for(int i=0; i<y+2; i++) {
+        cout<<"\n";
+        for(int j=0; j<x+2; j++) {
+            //tab[i][j]='d';
+            cout<<tab[j][i];
+        }
+    }
 }
 
 void mapa::draw() {
