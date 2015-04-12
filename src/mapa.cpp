@@ -168,6 +168,7 @@ void mapa::load_moves() {
             if(isalpha(c[0])) {
                 moves(c[0]);
             } else {
+                if (c[0]=='!')draw2();//delete it when everything works
                 //c-='0';
                 cin>>krok;
                 temp=atoi(c);
