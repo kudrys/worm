@@ -12,9 +12,9 @@ int main() {
     cin>>x;
     cin>>y;
     cin>>edzio_size;
+cout << "cos";
     skarbow.x=x;
     skarbow.y=y;
-
     skarbow.set_edzio_size(edzio_size);
     skarbow.create_map();
     skarbow.load();
