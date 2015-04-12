@@ -114,10 +114,16 @@ bool mapa::go(int x, int y){
         break;
     case 'K':
         edzio.get_active().delete_segment();
+        edzio.segment_count-=1;
         edzio.go();
         edzioX=x;
         edzioY=y;
-        break;
+        if(edzio.segment_count==0){
+            cout<<"Zegnaj, okrutny swiecie!";
+            return 0;
+            }else{
+            break;
+        }
     case 'T':
         return 1;
     default:
