@@ -109,9 +109,10 @@ bool mapa::go(int x, int y) {
         edzio.go();
         edzioX=x;
         edzioY=y;
-        edzio.add_segments(1);
         tab[x][y]=edzio.get_color();
+        edzio.add_segments(1);
         break;
+
     case 'K':
         edzio.get_active().delete_segment();
         //cout << edzio.segment_count << "lala\n";
