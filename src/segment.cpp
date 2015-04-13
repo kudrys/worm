@@ -34,9 +34,11 @@ void segment::add_segment(){
 
 void segment::delete_segment(){
 
-    segment *temp;
-    temp=next;
-    next=temp->next;
+    cout << next;
+    cout << next->next;
+    cout << next->next->next;
+    next=next->next->next;
+    cout << next;
     //delete temp;
 
 }
