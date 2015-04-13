@@ -8,7 +8,7 @@ class worm{
         worm();
         bool is_alive();
         void add_segments(int);
-        segment get_active();
+        segment * get_active();
         char get_color();
         void paint_active(char);
         void go();

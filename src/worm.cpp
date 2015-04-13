@@ -6,14 +6,12 @@ worm::worm(){
     active_segment = new segment;
 }
 
-segment worm::get_active()
-{
-    return *active_segment;
+segment * worm::get_active(){
+    return active_segment->next;
 }
 
-char worm::get_color()
-{
-    return active_segment->get_color();
+char worm::get_color(){
+    return get_active()->get_color();
 }
 
 
@@ -27,22 +25,21 @@ bool worm::is_alive(){
 
 void worm::add_segments(int c){
     for(int i=0; i<c; i++){
-        active_segment->add_segment();
+        get_active()->add_segment();
     }
     segment_count+=c;
 }
 
-void worm::go()
-{
+void worm::go(){
     active_segment=active_segment->next;
 }
 
 void worm::paint_active(char color){
-    active_segment->paint(color);
+    get_active()->paint(color);
 }
 
 void worm::delete_active_segment(){
-    active_segment->delete_segment();
+    get_active()->delete_segment();
 }
 
 

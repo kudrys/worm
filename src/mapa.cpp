@@ -112,7 +112,7 @@ bool mapa::go(int x, int y) {
         edzio.go();
         edzioX=x;
         edzioY=y;
-        if(edzio.get_active().is_painted) {
+        if(edzio.get_active()->is_painted) {
             tab[x][y]=edzio.get_color();
         }
         break;
@@ -183,13 +183,14 @@ void mapa::load_moves() {
             } else {
                 if (c[0]=='!')draw2();//delete it when everything works
                 else{
-                cin>>krok;
-                temp=atoi(c);
-                for(int j=0; j<temp; j++) {
-                    if(edzio.is_alive())
-                    if(moves(krok))
-                           break;
-                }}
+                    cin>>krok;
+                    temp=atoi(c);
+                    for(int j=0; j<temp; j++) {
+                        if(edzio.is_alive())
+                            if(moves(krok))
+                                break;
+                    }
+                }
             }
         }
         if(!edzio.is_alive())
