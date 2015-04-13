@@ -6,11 +6,6 @@
 using namespace std;
 
 int main() {
-
-    int i;
-
-
- //   cout<<"koniec";
     mapa skarbow;
     int x,y,edzio_size;
     cin>>x;
@@ -25,10 +20,3 @@ int main() {
     skarbow.load_moves();
 
 }
-/*
-
-10 10 3
-2 . T 18 . c 6 . a b 31 . 2 G 20 . 6 K 11 .
-5 p d d 100 p d d 10 l d d p p p p g l l d d d 10 p
-
-*/

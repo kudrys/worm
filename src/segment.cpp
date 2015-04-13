@@ -18,27 +18,16 @@ void segment::paint(char paintcolor){
 }
 
 char segment::get_color(){
-    if(is_painted)
-        return color;
-    else
-        //cout<<"jest czysty";
-        return '.';
+    return is_painted?color:'.';
 }
 
 void segment::add_segment(){
     segment * s = new segment;
-
     s->next=next;
     next = s;
-    //cout <<"\nadres " << s << " next adres " << s->next;
 }
 
 void segment::delete_segment(){
-
-    segment *temp;
-    temp=next;
-    next=temp->next;
-    //delete temp;
-
+    next=next->next;
 }
 
