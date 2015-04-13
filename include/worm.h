@@ -10,7 +10,6 @@ class worm{
         void add_segments(int);
         segment get_active();
         char get_color();
-        void funkk();
         void paint_active(char);
         void go();
         int segment_count;

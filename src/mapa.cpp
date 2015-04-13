@@ -28,8 +28,8 @@ void mapa::trees_everywhere() {
 }
 
 void mapa::create_map() {
-    tab = new char* [(y+1)*(x+1)];
-    for (int i = 0; i < (y+1)*(x+1); i++) {
+    tab = new char* [(y+1)+(x+1)];
+    for (int i = 0; i < (y+1)+(x+1); i++) {
         tab[i] = new char [x+2];
         //cout<<tab<<"\n";
     }
@@ -115,22 +115,27 @@ bool mapa::go(int x, int y) {
             tab[x][y]=edzio.get_color();
         }
         break;
+
     case 'G':
         edzio.go();
         edzioX=x;
         edzioY=y;
-        tab[x][y]=edzio.get_color();
+        for(int i=1; i<edzio.segment_count;i++)
+        edzio.go();
         edzio.add_segments(1);
+        edzio.go();
+        tab[x][y]=edzio.get_color();
         break;
 
     case 'K':
+        for(int i=1; i<edzio.segment_count;i++)
+        edzio.go();
         edzio.get_active().delete_segment();
-        //cout << edzio.segment_count << "lala\n";
         edzio.segment_count-=1;
-        //cout << edzio.segment_count << "lala\n";
+        edzio.go();
+
         if(!edzio.is_alive()) {
-            cout<<"\nZegnaj, okrutny swiecie!\n" ;//<<"mam " << edzio.segment_count << "segmencikow\n";;
-            //return 0;
+            cout<<"\nZegnaj, okrutny swiecie!\n" ;
             break;
         } else {
             edzio.go();
@@ -140,6 +145,7 @@ bool mapa::go(int x, int y) {
         }
     case 'T':
         return 1;
+
     default:
         edzio.go();
         edzioX=x;

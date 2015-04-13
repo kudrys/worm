@@ -36,8 +36,8 @@ void segment::delete_segment(){
 
     segment *temp;
     temp=next;
-    next=next->next;
-    delete temp;
+    next=temp->next;
+    //delete temp;
 
 }
 
