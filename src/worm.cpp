@@ -37,9 +37,13 @@ void worm::go()
     active_segment=active_segment->next;
 }
 
-void worm::paint_active(char color)
-{
+void worm::paint_active(char color){
     active_segment->paint(color);
 }
+
+void worm::delete_active_segment(){
+    active_segment->delete_segment();
+}
+
 
 
