@@ -90,7 +90,7 @@ void mapa::load() {
                 load_one_char(z);
                 //cout<<i;
             }
-            i=i+temp;
+            i=i+temp-1;
             //actualX=actualX+c;
         }
     }
@@ -172,7 +172,6 @@ void mapa::load_moves() {
     while(cin>>c) {
         //cout << edzio.segment_count;
         if(!edzio.is_alive()) {
-           cout<"kupa";
             break;
         } else {
             if(isalpha(c[0])) {
@@ -193,6 +192,8 @@ void mapa::load_moves() {
     }
     draw2();
 }
+
+
 
 
 

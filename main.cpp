@@ -2,12 +2,16 @@
 #include "segment.h"
 #include "mapa.h"
 #include <iostream>
+#include <stdio.h>
 using namespace std;
 
 int main() {
 
-    mapa skarbow;
+    int i;
 
+
+ //   cout<<"koniec";
+    mapa skarbow;
     int x,y,edzio_size;
     cin>>x;
     cin>>y;
@@ -17,6 +21,7 @@ int main() {
     skarbow.set_edzio_size(edzio_size);
     skarbow.create_map();
     skarbow.load();
+    skarbow.draw2();
     skarbow.load_moves();
 
 }
