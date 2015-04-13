@@ -1,3 +1,4 @@
+
 #include "segment.h"
 #include <iostream>
 using namespace std;

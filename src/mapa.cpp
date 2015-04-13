@@ -28,9 +28,9 @@ void mapa::trees_everywhere() {
 }
 
 void mapa::create_map() {
-    int gr=x>y?x:y;
-    tab = new char* [gr+1];
-    for (int i = 0; i < gr+1; i++) {
+     int gr=x>y?x:y;
+    tab = new char* [gr+2];
+    for (int i = 0; i < gr+2; i++) {
         tab[i] = new char [x+2];
         //cout<<tab<<"\n";
     }
@@ -187,7 +187,8 @@ void mapa::load_moves() {
                 temp=atoi(c);
                 for(int j=0; j<temp; j++) {
                     if(edzio.is_alive())
-                    moves(krok);
+                    if(moves(krok))
+                           break;
                 }}
             }
         }
@@ -196,7 +197,6 @@ void mapa::load_moves() {
     }
     draw2();
 }
-
 
 
 
