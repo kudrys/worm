@@ -121,10 +121,7 @@ bool mapa::go(int x, int y) {
         edzio.go();
         edzioX=x;
         edzioY=y;
-        for(int i=1; i<edzio.segment_count;i++)
-        edzio.go();
         edzio.add_segments(1);
-        edzio.go();
         tab[x][y]=edzio.get_color();
         break;
 

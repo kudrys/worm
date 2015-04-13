@@ -25,7 +25,7 @@ bool worm::is_alive(){
 
 void worm::add_segments(int c){
     for(int i=0; i<c; i++){
-        get_active()->add_segment();
+        active_segment->add_segment();
     }
     segment_count+=c;
 }
