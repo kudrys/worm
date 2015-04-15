@@ -28,8 +28,8 @@ void mapa::trees_everywhere() {
 }
 
 void mapa::create_map() {
-     int gr=x>y?x:y;
-     gr=x;
+    int gr=x>y?x:y;
+    gr=x;
     tab = new char* [gr+2];
     for (int i = 0; i < gr+2; i++) {
         tab[i] = new char [y+2];
