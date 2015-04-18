@@ -9,7 +9,7 @@ class mapa
         int y;
         int edzioX; //pozycja robaka x
         int edzioY; //pozycja robaka y
-        char **tab;
+        char *tab;
         void create_map();
         void draw();
         void draw2();
@@ -23,6 +23,9 @@ class mapa
         bool moves(char);
         void load_moves();
         void draw_trees();
+        void set_tab(int, int, char);
+        char get_tab(int, int);
+        int get_index(int, int);
 
     protected:
     private:
