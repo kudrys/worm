@@ -13,27 +13,24 @@ mapa::mapa() {
 }
 
 char mapa::draw_point(int pointX,int pointY) {
-    return tab[pointX][pointY];
+    return get_tab(pointX, pointY);
 }
 
 void mapa::trees_everywhere() {
     for(int i=0; i<x+2; i++) {
-        for(int j=0; j<y+2; j++) {
-            tab[0][j] = 'T';
-            tab[i][0] = 'T';
-            tab[i][y+1] = 'T';
-            tab[x+1][j] = 'T';
-        }
+        set_tab(i, 0, 'T');
+        set_tab(i, y+1, 'T');
+    }
+    for(int j=0; j<y+2; j++) {
+        set_tab(0, j, 'T');
+        set_tab(x+1, j, 'T');
     }
 }
 
 
 void mapa::create_map() {
 
-    tab = new char* [x+2];
-    for (int i = 0; i < x+2; i++) {
-        tab[i] = new char [y+2];
-    }
+    tab = new char[(x+2)*(y+2)];
     trees_everywhere();
 }
 
@@ -41,7 +38,7 @@ void mapa::draw_trees() {
     for(int i=0; i<y+2; i++) {
         cout<<"\n";
         for(int j=0; j<x+2; j++) {
-            cout<<tab[j][i];
+            cout<<get_tab(j, i);
         }
     }
 }
@@ -50,9 +47,10 @@ void mapa::draw() {
     for(int i=1; i<y+1; i++) {
         cout<<"\n";
         for(int j=1; j<x+1; j++) {
-            cout<<tab[j][i];
+            cout<<get_tab(j, i);
         }
     }
+
 }
 
 void mapa::draw2() {
@@ -61,7 +59,7 @@ void mapa::draw2() {
 }
 
 void mapa::load_one_char(char c) {
-    tab[actualX][actualY]=c;
+    set_tab(actualX, actualY, c);
     actualX++;
     if(actualX==x+1) {
         actualX=1;
@@ -96,14 +94,14 @@ void mapa::set_edzio_size(int c) {
 }
 
 bool mapa::go(int x, int y) {
-    char action=tab[x][y];
+    char action=get_tab(x,y);
     switch(action) {
         case '.':
             edzio.go();
             edzioX=x;
             edzioY=y;
             if(edzio.get_active()->is_painted) {
-                tab[x][y]=edzio.get_color();
+                set_tab(x,y,edzio.get_color());
             }
             break;
         case 'G':
@@ -111,7 +109,7 @@ bool mapa::go(int x, int y) {
             edzioX=x;
             edzioY=y;
             edzio.add_segments(1);
-            tab[x][y]=edzio.get_color();
+            set_tab(x,y,edzio.get_color());
             break;
         case 'K':
             edzio.delete_active_segment();
@@ -179,6 +177,21 @@ void mapa::load_moves() {
             break;
     }
     draw2();
+}
+
+
+void mapa::set_tab(int gx, int gy, char c){
+    tab[get_index(gx, gy)]=c;
+    //cout <<tab[get_index(gx, gy)];
+}
+
+char mapa::get_tab(int gx, int gy){
+    return tab[get_index(gx, gy)];
+}
+
+int mapa::get_index(int given_x, int given_y){
+    //cout << "x: " << given_x << " y: " << given_y << " index: " << given_x*(x+2)+given_y << "\n";
+    return given_x*(x+2)+given_y;
 }
 
 
