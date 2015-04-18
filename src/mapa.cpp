@@ -27,11 +27,12 @@ void mapa::trees_everywhere() {
     }
 }
 
+
 void mapa::create_map() {
 
-    tab = new char [x+2][];
+    tab = new char* [x+2];
     for (int i = 0; i < x+2; i++) {
-        //tab[i] = new char [y+2];
+        tab[i] = new char [y+2];
     }
     trees_everywhere();
 }
