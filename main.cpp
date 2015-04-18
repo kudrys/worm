@@ -16,7 +16,7 @@ int main() {
     skarbow.set_edzio_size(edzio_size);
     skarbow.create_map();
     skarbow.load();
-    skarbow.draw2();
+    //skarbow.draw2();
     skarbow.load_moves();
 
 }
